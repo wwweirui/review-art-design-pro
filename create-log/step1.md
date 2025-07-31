@@ -129,3 +129,5 @@ pnpm i unplugin-vue-components
 ### 安装 ElementPlus 图标库
 
 pnpm i @element-plus/icons-vue
+
+在 Vite + Vue3 项目中实现 Element Plus 按需引入，推荐使用官方维护的 自动按需导入插件，无需手动写 import，打包时只会包含你用到的组件和样式，极大减小体积
