@@ -102,7 +102,30 @@ JavaScript 代码压缩工具（minifier），主要用于生产环境构建时�
 
 env env.development env.production
 
+预配置环境怎么这么麻烦，有点累了
 
-## 缺少 Vue Router，需要安装
+## vite.config.js
 
+### optimizeDeps配置项
+
+Vite 提供的依赖预构建配置，用于在开发环境中预打包第三方依赖（如 vue、element-plus 等），将其转换为 ESM 格式并合并为少数几个文件，从而提升开发服务器启动速度和热更新性能。
+
+- commonJs转换为ESM 避免解析commonjs的兼容性问题
+- 依赖合并，减少浏览器请求次数
+- 缓存优化与构建结果缓存到node_modules/.vite/deps，后续启动时直接复用，大幅缩短启动时间。
+
+## 缺少 Vue Router，pinia, nprogress, axios 需要安装
+
+pnpm i pinia
 pnpm i vue-router@4
+pnpm i nprogress
+pnpm i axios
+
+## 组件库按ELementPlus按需引入
+
+pnpm i element-plus
+pnpm i unplugin-vue-components
+
+### 安装 ElementPlus 图标库
+
+pnpm i @element-plus/icons-vue

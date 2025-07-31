@@ -5,7 +5,7 @@ import viteCompression from 'vite-plugin-compression'
 import Components from 'unplugin-vue-components/vite' // 按需导入组件
 import AutoImport from 'unplugin-auto-import/vite' // 自动导入
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'  // 按需导入 Element Plus 解析器
-import { fileURLToPath } from 'url' // 用于将 file:// 协议的 URL 转换为文件路径
+
 // import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://devtools.vuejs.org/getting-started/introduction
@@ -121,5 +121,10 @@ export default ({ mode }: { mode: string }) => {
       //   filename: 'dist/stats.html' // 分析图生成的文件名及路径
       // }),
     ],
+    optimizeDeps: { // 依赖预构建配置
+      include: [
+        'vue'
+      ],
+    }
   })
 }
